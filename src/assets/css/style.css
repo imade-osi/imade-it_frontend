@@ -1,0 +1,48 @@
+:root{
+  --mainBlue: #2a2a72;
+  --lightBlue: #009ffd;
+  --mainWhite: #f3f3f3;
+  --mainDark: #232528;
+  --mainYellow:#ffa400;
+}
+.map-container-7{
+overflow:hidden;
+padding-bottom: 30%;
+position:relative;
+height:0;
+}
+.iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+
+.search-button{
+position: absolute;
+left: 20%;
+top: -20px;
+text-transform: capitalize;
+font-size: 1.4rem;
+background: transparent;
+border: 0.05rem solid var(--lightBlue);
+color:var(--lightBlue);
+border-radius: 0.5rem;
+padding: 0.2rem 0.5rem;
+cursor:pointer;
+margin:0.2rem 0.5rem 0;
+transition:all 0.5s ease-in-out;
+}
+.search-button:hover{
+    background:var(--lightBlue);
+    color:var(--mainBlue);
+}
+.search-button:focus {
+    outline: none;}
+
+.main-btn{
+    position: absolute;
+    top: 90%;
+    left: 68%;
+}

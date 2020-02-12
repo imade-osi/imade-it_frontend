@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.mapper {
+    position: absolute;
+    right: 0px;
+    width: 70%;
+    height: 75%;  
+}
+
