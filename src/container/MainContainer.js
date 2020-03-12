@@ -18,38 +18,55 @@ import MapContainer from "./MapContainer.js";
 export default class MainContainer extends Component {
 
     state = { 
-              myCareerServices: [],
-              currentUserId: 0,
-              token: ""
+               
+                currentUserId: 0,
+                token: "",
+                currentUserName: ""
             }
             
+
+          
+    postAuthUser = (userId, token, name) => {
+        // console.log(arg)
+
+        this.setState({
+            currentUserId: userId,
+            token: token,
+            currentUserName: name
+        })
+    }
+
    
 
-    addServiceToPage = (serviceName, serviceAddress) => {
-        fetch('http://localhost:4000/career_services', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                "Authorization": localStorage.token
-            },
-            body: JSON.stringify({
-                name: serviceName,
-                address: serviceAddress
-            })
-        })
-            .then(r => r.json())
-            .then((response) => {
+        // fetch('http://localhost:4000/career_services', {
+        //     method: "POST",
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Accept': 'application/json',
+        //         "Authorization": localStorage.token
+        //     },
+        //     body: JSON.stringify({
+        //         name: serviceName,
+        //         address: serviceAddress
+        //     })
+        // })
+        //     .then(r => r.json())
+        //     .then((response) => {
 
-                this.setState({
-                    ...this.state,
-                    careerServices: {
-                        name: serviceName,
-                        address: serviceAddress
-                    } 
-                })
-            })
-    }  
+        //         this.setState({
+        //             ...this.state,
+        //             careerServices: {
+        //                 name: serviceName,
+        //                 address: serviceAddress
+        //             } 
+        //         })
+        //     })
+
+    
+    
+    removeService = (index) => {
+
+    }
 
     // componentDidMount() {
     //     if (window.performance) {
@@ -79,18 +96,10 @@ export default class MainContainer extends Component {
   }
 
 
-    postAuthUser = (userId, token) => {
-        // console.log(arg)
-       
-                this.setState({
-                    loggedIn: true,
-                    currentUserId: userId,
-                    token: token   
-                })
-    }
-
     render() {
+        console.log(this.state)
         return (
+           
             <BrowserRouter>
                 <Switch>
                     <Route 
@@ -99,7 +108,7 @@ export default class MainContainer extends Component {
                     /> 
                     <Route
                         path="/homepage"
-                        render={props => <LandingPage {...props} addServiceToPage={this.addServiceToPage} loggedIn={this.state.loggedIn}  />}
+                        render={props => <LandingPage {...props} pumpkin = {this.props.pumpkin} myCareerServices={this.props.myCareerServices} addServiceToPage={this.props.addServiceToPage}  currentUserName={this.state.currentUserName} />}
                     />
                     <Route
                         path="/profile-page"
@@ -107,7 +116,7 @@ export default class MainContainer extends Component {
                     />
                     <Route
                         path="/events-page"
-                        render={props => <EventPage {...props} loggedIn={this.state.loggedIn} />}
+                        render={props => <EventPage {...props} loggedIn={this.state.loggedIn} myCareerServices={this.props.myCareerServices} />}
                     />
                     <Route
                         path="/sign-in"

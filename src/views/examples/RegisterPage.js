@@ -20,9 +20,8 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 export default class RegisterPage extends Component {
 
 state={
-  user: {},
+  currentUser: {},
   username: '',
-  createNew: false,
   password: '',
   token: "",
   user_id: ""
@@ -57,10 +56,10 @@ state={
       .then(response => { 
 
         if (response.token) {
-          localStorage.token = response.token
-          localStorage.user_id = response.user_id
-          localStorage.name = response.name
-          this.props.postAuthUser(localStorage.user_id)
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('user_id', response.id);
+          localStorage.setItem('name', response.name);
+          this.props.postAuthUser(localStorage.user_id, localStorage.token, localStorage.name )
         } else {
           swal({
             title: "Oops something went wrong, please try again!",
@@ -85,7 +84,7 @@ state={
   }
 
   handleLogin = () => {
-
+    //debugger 
     let user = {
       name: this.state.username,
       password: this.state.password 
@@ -104,10 +103,11 @@ state={
         
         if (response.token) {
           
-          localStorage.token = response.token
-          localStorage.user_id = response.id
-          localStorage.name = response.name
-          this.props.postAuthUser(response.id, response.token)
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('user_id', response.id);
+          localStorage.setItem('name', response.name);
+          //debugger 
+          this.props.postAuthUser(response.id, response.token, response.name)
           
         } else {
             swal({
@@ -139,8 +139,7 @@ state={
   }
   
 
-  render() {
-  
+  render() { 
     if(localStorage.token){
       
       return <Redirect to="/homepage"></Redirect>

@@ -39,7 +39,10 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
-function EventPage() {
+const ProfilePage = props =>{
+    //debugger 
+    let myCareerArray = props.myCareerServices
+
     const [activeTab, setActiveTab] = React.useState("1");
 
     const toggle = tab => {
@@ -55,7 +58,50 @@ function EventPage() {
             document.body.classList.remove("landing-page");
         };
     });
+
+    let myCareerServices = () => {
+        //debugger 
+        return myCareerArray.map((careerObject) => {
+            
+            return <li>
+                <Row>
+                    <Col className="ml-auto mr-auto" lg="2" md="4" xs="4">
+                        <img
+                            alt="..."
+                            className="img-circle img-no-padding img-responsive"
+                            src={require("assets/img/faces/clem-onojeghuo-2.jpg")}
+                        />
+                    </Col>
+                    <Col className="ml-auto mr-auto" lg="7" md="4" xs="4">
+                        <h6>
+                            {careerObject.name}<br />
+                            <small>{careerObject.address}</small>
+                        </h6>
+                    </Col>
+                    <Col className="ml-auto mr-auto" lg="3" md="4" xs="4">
+                        <FormGroup check>
+                            <Label check>
+                                <Input
+                                    defaultChecked
+                                    defaultValue=""
+                                    type="checkbox"
+                                />
+                                <span className="form-check-sign" />
+                            </Label>
+                        </FormGroup>
+                    </Col>
+                </Row>
+                <hr /> 
+            </li>
+                 
+        })
+
+
+    }
+
+
     return (
+        
         <>
             <ExamplesNavbar />
             <ProfilePageHeader />
@@ -66,45 +112,75 @@ function EventPage() {
                             <img
                                 alt="..."
                                 className="img-circle img-no-padding img-responsive"
-                            // src={require("assets/img/faces/joe-gardner-2.jpg")}
+                                src="https://www.unahealydesign.com/wp-content/uploads/2014/03/blog-working-with-Graphic-Designer-1200x557.jpg"
                             />
                         </div>
                         <div className="name">
                             <h4 className="title">
-                                Career Events<br />
+                                My Career Services <br />
                             </h4>
-                            <h6 className="description">User</h6>
+                            <h6 className="description"></h6>
                         </div>
                     </div>
                     <Row>
                         <Col className="ml-auto mr-auto text-center" md="6">
                             <p>
-                                
+                                Welcome to your Career Service Page
               </p>
                             <br />
-                            {/* <Button className="btn-round" color="default" outline>
-                <i className="fa fa-cog" /> Settings
-              </Button> */}
+                            
                         </Col>
                     </Row>
                     <br />
-
-
-
-
-
-
-
-
-
-
-
-
+                    <div className="nav-tabs-navigation">
+                        <div className="nav-tabs-wrapper">
+                            <Nav role="tablist" tabs>
+                                <NavItem>
+                                    <NavLink
+                                        className={activeTab === "1" ? "active" : ""}
+                                        onClick={() => {
+                                            toggle("1");
+                                        }}
+                                    >
+                                        Personal
+                  </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink
+                                        className={activeTab === "2" ? "active" : ""}
+                                        onClick={() => {
+                                            toggle("2");
+                                        }}
+                                    >
+                                        Friends
+                  </NavLink>
+                                </NavItem>
+                            </Nav>
+                        </div>
+                    </div>
+                    {/* Tab panes */}
+                    <TabContent className="following" activeTab={activeTab}>
+                        <TabPane tabId="1" id="follows">
+                            <Row>
+                                <Col className="ml-auto mr-auto" md="6">
+                                    <ul className="list-unstyled follows">  
+                                       {myCareerServices()}
+                                    </ul>
+                                </Col>
+                            </Row>
+                        </TabPane>
+                        <TabPane className="text-center" tabId="2" id="following">
+                            <h3 className="text-muted">Not following anyone yet :(</h3>
+                            <Button className="btn-round" color="warning">
+                                Find artists
+              </Button>
+                        </TabPane>
+                    </TabContent>
                 </Container>
             </div>
-            {/* <DemoFooter /> */}
+            
         </>
     );
 }
 
-export default EventPage;
+export default ProfilePage;

@@ -17,7 +17,7 @@
 
 */
 import React from "react";
-import { Link } from "react-router-dom";
+import * as RRD from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
 
@@ -32,7 +32,7 @@ import {
   Container
 } from "reactstrap";
 
-function ExamplesNavbar() {
+function ExamplesNavbar(props) {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
@@ -62,6 +62,7 @@ function ExamplesNavbar() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
+  console.log(props)
   return (
     <Navbar
       className={classnames("fixed-top", navbarColor)}
@@ -75,7 +76,7 @@ function ExamplesNavbar() {
             to="/index"
             target="_blank"
             title="Coded by Creative Tim"
-            tag={Link}
+            tag={RRD.Link}
           >
             Imade-it
           </NavbarBrand>
@@ -98,37 +99,49 @@ function ExamplesNavbar() {
         >
           <Nav navbar>
           
-            <NavItem>
-              <NavLink href="/homepage" >
-                <i className="nc-icon nc-istanbul" /> Homepage
+            <RRD.NavLink to="/homepage">
+              <NavItem>
+                <NavLink>
+                  <i className="nc-icon nc-istanbul" /> Homepage
               </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/profile-page" >
-                <i className="nc-icon nc-layout-11" /> My Profile 
+              </NavItem>
+            </RRD.NavLink>
+
+            <RRD.NavLink to="/profile-page">
+              <NavItem>
+                <NavLink>
+                  <i className="nc-icon nc-layout-11" /> My Profile
               </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                href="/events-page"
-              >
-                <i className="nc-icon nc-book-bookmark" /> My Events
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                href="/home"
-              >
-            
-              {localStorage.clear()}
-                <i className="nc-icon " /> Log Out
-              </NavLink>
-            </NavItem>
+              </NavItem>
+            </RRD.NavLink>
+
+            <RRD.NavLink to="/events-page">
+              <NavItem>
+                <NavLink
+                  
+                >
+                  <i className="nc-icon nc-book-bookmark" /> Career Services
+                </NavLink>
+              </NavItem>
+            </RRD.NavLink>
+
+            <RRD.NavLink to="/pr</RRD.NavLink>ofile-page">
+              <NavItem>
+                <NavLink
+                  to="/home"
+                  onClick={()=>{localStorage.clear()}}
+                >
+              
+                  <i className="nc-icon " /> Log Out
+                </NavLink>
+              </NavItem>
+            </RRD.NavLink>
+
             {/* 
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://twitter.com/CreativeTim?ref=creativetim"
+                to="https://twitter.com/CreativeTim?ref=creativetim"
                 target="_blank"
                 title="Follow us on Twitter"
               >
@@ -139,7 +152,7 @@ function ExamplesNavbar() {
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.facebook.com/CreativeTim?ref=creativetim"
+                to="https://www.facebook.com/CreativeTim?ref=creativetim"
                 target="_blank"
                 title="Like us on Facebook"
               >
@@ -150,7 +163,7 @@ function ExamplesNavbar() {
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                to="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
                 target="_blank"
                 title="Follow us on Instagram"
               >
@@ -161,7 +174,7 @@ function ExamplesNavbar() {
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.github.com/CreativeTimOfficial?ref=creativetim"
+                to="https://www.github.com/CreativeTimOfficial?ref=creativetim"
                 target="_blank"
                 title="Star on GitHub"
               >

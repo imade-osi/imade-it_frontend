@@ -30,7 +30,8 @@ export default class LandingPageHeader extends Component {
 
   render() {
     let pageHeader = React.createRef()
-
+    //console.log(localStorage.name)
+    //debugger 
     return (
       <div
         style={{
@@ -43,8 +44,10 @@ export default class LandingPageHeader extends Component {
         <div className="filter" />
         <Container>
           <div className="motto text-center">
-            <h1>Welcome{}</h1>
+            <h1>Welcome  {localStorage.name.charAt(0).toUpperCase() + localStorage.name.slice(1)}
+            {/* {localStorage.name} */}
             {/* <h3>The right job starts with the proper network</h3> */}
+            </h1>
             <br />
             <Button
               className="btn-round mr-1"

@@ -20,8 +20,8 @@ export default class LandingPage extends Component {
 
   handleSearchError = () => {
     swal({
-      title: "Sorry, please check your city and state again!",
-      icon: "fail",
+      title: "Sorry, location can't be found. Please check your city and/or state and try again!",
+      icon: "error",
       button: "Back to Map",
     });
   }
@@ -33,13 +33,28 @@ export default class LandingPage extends Component {
   }
 
   handleMainBtn = () => {
+    
       this.setState({
         ...this.state, 
         mapView: false
       })
+      
   }
 
   setCenter = (newlat, newlong, markersArray) => {
+    
+    //debugger 
+
+    markersArray.length === 0  ? 
+
+        this.setState({
+          latCenter: newlat,
+          lngCenter: newlong,
+          mapView: true
+        })
+
+    :
+
     this.setState({
       latCenter: newlat,
       lngCenter: newlong,
@@ -47,11 +62,13 @@ export default class LandingPage extends Component {
       mapView: true 
     })
 
+    //debugger 
+
   }
 
 
   getCareerCoordinates = (city, state) => {
-       // debugger 
+        //debugger 
     if (!city)
     {
     city = 'philadelphia'
@@ -63,65 +80,79 @@ export default class LandingPage extends Component {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     let latCenter = 0;
     let longCenter = 0;
-    let cityArray = city.split(' ')
-    let stateArray = state.split(' ')
     let markersArray = []
-    // address = '1600+Amphitheatre+Parkway,+Mountain+View,+California';
 
-    if (cityArray.length === 3) {
-      city = `${cityArray[0]}+${cityArray[1]}+${cityArray[2]}`
-    }
-    else if (cityArray.length === 2) {
-      city = `${cityArray[0]}+${cityArray[1]}`
-    }
-    else if (cityArray.length === 1) {
-      city = `${cityArray[0]}`
-    }
-    else window.alert('Sorry, the city you entered could not be found. Please try again. ')
+    // let cityArray = city.split(' ')
+    // let stateArray = state.split(' ')
+    // // address = '1600+Amphitheatre+Parkway,+Mountain+View,+California';
+
+    // if (cityArray.length === 3) {
+    //   city = `${cityArray[0]}+${cityArray[1]}+${cityArray[2]}`
+    // }
+    // else if (cityArray.length === 2) {
+    //   city = `${cityArray[0]}+${cityArray[1]}`
+    // }
+    // else if (cityArray.length === 1) {
+    //   city = `${cityArray[0]}`
+    // }
+    // else window.alert('Sorry, the city you entered could not be found. Please try again. ')
 
 
-    if (stateArray.length === 3) {
-      state = `${stateArray[0]}+${stateArray[1]}+${stateArray[2]}`
-    }
-    else if (stateArray.length === 2) {
-      state = `${stateArray[0]}+${stateArray[1]}`
-    }
-    else if (stateArray.length === 1) {
-      state = `${stateArray[0]}`
-    }
-    else window.alert('Sorry, the city you entered could not be found. Please try again. ')
+    // if (stateArray.length === 3) {
+    //   state = `${stateArray[0]}+${stateArray[1]}+${stateArray[2]}`
+    // }
+    // else if (stateArray.length === 2) {
+    //   state = `${stateArray[0]}+${stateArray[1]}`
+    // }
+    // else if (stateArray.length === 1) {
+    //   state = `${stateArray[0]}`
+    // }
+    // else window.alert('Sorry, the city you entered could not be found. Please try again. ')
 
 
     let address = `${city},+${state}`
 
 
-
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyDxHFNinALkQR6O1N-ZxPn65Kt085sUk0I`, {
+    //debugger 
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_MAP_API_KEY}`, {
     })
       .then(r => r.json())
       .then((response) => {
-        if(address === undefined)
-        {
+        //debugger
+        
+        if (response.results[0] === undefined ) {
           this.handleSearchError()
+          return
         }
+        else 
+
+         
         latCenter = response.results[0].geometry.location.lat
         longCenter = response.results[0].geometry.location.lng
+         //debugger 
 
-        fetch(`${proxyurl}https://maps.googleapis.com/maps/api/place/textsearch/json?query=job+fairs+near+${address}&key=AIzaSyDxHFNinALkQR6O1N-ZxPn65Kt085sUk0I`)
+        fetch(`${proxyurl}https://maps.googleapis.com/maps/api/place/textsearch/json?query=job+fairs+near+${address}&key=${process.env.REACT_APP_MAP_API_KEY}`)
           .then(r => r.json())
           .then((response) => {
-            response.results.forEach((element, idx) => {
-              if (idx < 20) {
-                markersArray.push([element.name, element.formatted_address, element.geometry.location.lat, element.geometry.location.lng])
+            //debugger 
+
+            //debugger 
+              if (response.results.length > 0 )
+              {
+                response.results.forEach((element, idx) => {
+                  if (idx < 20) {
+                    markersArray.push([element.name, element.formatted_address, element.geometry.location.lat, element.geometry.location.lng])
+                  }
+                }) 
               }
-            }) 
-    
+              //debugger 
             this.setCenter(latCenter, longCenter, markersArray)
           })
       })
   }
 
   render() {
+    console.log("my careers", this.props.myCareerServices)
     return (
       <div>
           {this.state.mapView ? 
@@ -133,7 +164,7 @@ export default class LandingPage extends Component {
             />
         :
           <div> 
-            <ExamplesNavbar /><LandingPageHeader getCareerCoordinates={this.getCareerCoordinates}/>
+            <ExamplesNavbar history={this.props.history}/><LandingPageHeader currentUserName={this.props.currentUserName} getCareerCoordinates={this.getCareerCoordinates}/>
           </div>
       }
       </div>

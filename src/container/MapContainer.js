@@ -176,6 +176,7 @@ export class MapContainer extends Component {
     searchHandler = (event) => {
         event.preventDefault()
         
+        //debugger 
         let city = event.target.city.value
         let state = event.target.state.value
     
