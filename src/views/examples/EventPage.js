@@ -39,7 +39,7 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
-const ProfilePage = props =>{
+const ProfilePage = props => {
     //debugger 
     let myCareerArray = props.myCareerServices
 
@@ -125,7 +125,7 @@ const ProfilePage = props =>{
                     <Row>
                         <Col className="ml-auto mr-auto text-center" md="6">
                             <p>
-                                Welcome to your Career Service Page
+                                Welcome to your Career Service Page!
               </p>
                             <br />
                             
