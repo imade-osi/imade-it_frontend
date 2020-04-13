@@ -61,6 +61,7 @@ const ProfilePage = props => {
 
     let myCareerServices = () => {
         //debugger 
+       
         return myCareerArray.map((careerObject) => {
             
             return <li>
@@ -161,19 +162,46 @@ const ProfilePage = props => {
                     {/* Tab panes */}
                     <TabContent className="following" activeTab={activeTab}>
                         <TabPane tabId="1" id="follows">
+                            
                             <Row>
                                 <Col className="ml-auto mr-auto" md="6">
                                     <ul className="list-unstyled follows">  
-                                       {myCareerServices()}
+                                        <center><h3 className="text-muted"> No services have been added yet :(</h3></center>
                                     </ul>
                                 </Col>
                             </Row>
                         </TabPane>
                         <TabPane className="text-center" tabId="2" id="following">
-                            <h3 className="text-muted">Not following anyone yet :(</h3>
-                            <Button className="btn-round" color="warning">
-                                Find artists
-              </Button>
+                            
+                            <Row>
+                                <Col className="ml-auto mr-auto" lg="2" md="4" xs="4">
+                                    <img
+                                        alt="..."
+                                        className="img-circle img-no-padding img-responsive"
+                                        src={require("assets/img/faces/company2.jpg")}
+                                    />
+                                </Col>
+                                <Col className="ml-auto mr-auto" lg="7" md="4" xs="4">
+                                    <h6>
+                                            Imade's Career Network <br /> <br />  
+                                        <small>Career Service Name: Philadelphia Works, Inc </small><br />
+                                        <small>Address: 1617 John F Kennedy Blvd 13th floor, Philadelphia, PA 19103, United States</small>
+                                    </h6>
+                                </Col>
+                                <Col className="ml-auto mr-auto" lg="3" md="4" xs="4">
+                                    <FormGroup check>
+                                        <Label check>
+                                            <Input
+                                                defaultChecked
+                                                defaultValue=""
+                                                type="checkbox"
+                                            />
+                                            <span className="form-check-sign" />
+                                        </Label>
+                                    </FormGroup>
+                                </Col>
+                            </Row>
+                            
                         </TabPane>
                     </TabContent>
                 </Container>

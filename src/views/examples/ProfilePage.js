@@ -71,7 +71,7 @@ function ProfilePage() {
             </div>
             <div className="name">
               <h4 className="title">
-                Welcome {localStorage.name.charAt(0).toUpperCase() + localStorage.name.slice(1)} <br />
+               {localStorage.name.charAt(0).toUpperCase() + localStorage.name.slice(1)}'s Profile Page <br />
               </h4>
               <h6 className="description"></h6>
             </div>
@@ -79,7 +79,7 @@ function ProfilePage() {
           <Row>
             <Col className="ml-auto mr-auto text-center" md="6">
               <p>
-                Profile Page
+                Your journey begins here
               </p>
               <br />
               
@@ -124,13 +124,13 @@ function ProfilePage() {
                           <img
                             alt="..."
                             className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/clem-onojeghuo-2.jpg")}
+                            src={require("assets/img/faces/profilepic.JPG")}
                           />
                         </Col>
                         <Col className="ml-auto mr-auto" lg="7" md="4" xs="4">
                           <h6>
-                            Flume <br />
-                            <small>Musical Producer</small>
+                          Imade <br />
+                            <small>Currently chasing his dreams</small>
                           </h6>
                         </Col>
                         <Col className="ml-auto mr-auto" lg="3" md="4" xs="4">
@@ -148,31 +148,6 @@ function ProfilePage() {
                       </Row>
                     </li>
                     <hr />
-                    <li>
-                      <Row>
-                        <Col className="mx-auto" lg="2" md="4" xs="4">
-                          <img
-                            alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/ayo-ogunseinde-2.jpg")}
-                          />
-                        </Col>
-                        <Col lg="7" md="4" xs="4">
-                          <h6>
-                            Banks <br />
-                            <small>Singer</small>
-                          </h6>
-                        </Col>
-                        <Col lg="3" md="4" xs="4">
-                          <FormGroup check>
-                            <Label check>
-                              <Input defaultValue="" type="checkbox" />
-                              <span className="form-check-sign" />
-                            </Label>
-                          </FormGroup>
-                        </Col>
-                      </Row>
-                    </li>
                   </ul>
                 </Col>
               </Row>
@@ -180,7 +155,7 @@ function ProfilePage() {
             <TabPane className="text-center" tabId="2" id="following">
               <h3 className="text-muted">Not following anyone yet :(</h3>
               <Button className="btn-round" color="warning">
-                Find artists
+                Find Job Seekers
               </Button>
             </TabPane>
           </TabContent>

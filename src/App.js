@@ -6,8 +6,7 @@ export default class App extends Component {
   state= {
       myCareerServices: [
           {
-              name: "Career Service Name: Philadelphia Works, Inc.",
-              address: "Address: 1617 John F Kennedy Blvd 13th floor, Philadelphia, PA 19103, United States"
+              
           }
       ]
   }
