@@ -59,8 +59,8 @@ function IndexHeader() {
                 <img alt="..." src={require("assets/img/fog-low.png")} />
               </div>
             </div>
-            <h2 className="presentation-subtitle text-center">
-              The Job-Fair finding web app of your dreams. 
+            <h2 className="presentation-subtitle text-center"> 
+                The Career Service site of your dreams. 
             </h2>
           </Container>
           <br />

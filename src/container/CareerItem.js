@@ -12,7 +12,7 @@ export default class CareerItem extends React.Component {
 
     addCareer = () => {
         swal({
-            title: "Career Service added to your log!",
+            title: "New Career Service added to your page!",
             text: this.props.careerDetails.name,
             icon: "success",
             button: "Back to Map",

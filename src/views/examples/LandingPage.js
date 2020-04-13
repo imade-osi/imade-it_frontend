@@ -129,8 +129,8 @@ export default class LandingPage extends Component {
          
         latCenter = response.results[0].geometry.location.lat
         longCenter = response.results[0].geometry.location.lng
-         //debugger 
-
+         //debugger
+ 
         fetch(`${proxyurl}https://maps.googleapis.com/maps/api/place/textsearch/json?query=job+fairs+near+${address}&key=${process.env.REACT_APP_MAP_API_KEY}`)
           .then(r => r.json())
           .then((response) => {

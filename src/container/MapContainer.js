@@ -159,7 +159,7 @@ export class MapContainer extends Component {
                         lng: this.props.lngCenter
                     }}
 
-                    zoom={11}
+                    zoom={10}
                     onClick={this.onMapClicked}
                 >
                     {this.displayMarkers()}
@@ -207,8 +207,10 @@ export class MapContainer extends Component {
                                 {/* <--Grid column--> */}
                                 <div className="col-md-6 mb-4">
                                     <form onSubmit={(event)=>{this.searchHandler(event)}}>
-                                        <div style={{"textAlign": "center"}}> 
-                                            Career Service Search Field
+                                        <div style={{"textAlign": "center"}}>
+                                            <b>
+                                                Career Service Search Field
+                                            </b> 
                                         </div>
 
                                             <div className="md-form">
