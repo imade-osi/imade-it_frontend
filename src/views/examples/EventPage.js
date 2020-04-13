@@ -36,7 +36,7 @@ import {
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
+import EventPageHeader from "components/Headers/EventPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
 const ProfilePage = props => {
@@ -105,7 +105,7 @@ const ProfilePage = props => {
         
         <>
             <ExamplesNavbar />
-            <ProfilePageHeader />
+            <EventPageHeader />
             <div className="section profile-content">
                 <Container>
                     <div className="owner">
@@ -127,9 +127,9 @@ const ProfilePage = props => {
                         <Col className="ml-auto mr-auto text-center" md="6">
                             <p>
                                 Your friends and finances await!
-              </p>
+                            </p>
                             <br />
-                            
+                            <br /> 
                         </Col>
                     </Row>
                     <br />

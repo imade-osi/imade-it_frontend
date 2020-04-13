@@ -69,6 +69,8 @@ function ProfilePage() {
                 src="https://www.theworkathomewoman.com/wp-content/uploads/Graphic-Designer-at-Home.jpg"
               />
             </div>
+           
+            <br /> 
             <div className="name">
               <h4 className="title">
                {localStorage.name.charAt(0).toUpperCase() + localStorage.name.slice(1)}'s Profile Page <br />
@@ -82,6 +84,7 @@ function ProfilePage() {
                 Your journey begins here
               </p>
               <br />
+              <br /> 
               
             </Col>
           </Row>
