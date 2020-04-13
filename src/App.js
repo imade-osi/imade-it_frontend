@@ -4,16 +4,12 @@ import MainContainer from './container/MainContainer'
 export default class App extends Component {
 
   state= {
-      myCareerServices: [
-          {
-              
-          }
-      ]
+      myCareerServices: []
   }
-
+   
     addServiceToPage = (serviceName, serviceAddress) => {
 
-
+  
         this.setState({
 
             myCareerServices: [...this.state.myCareerServices,

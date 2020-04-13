@@ -61,16 +61,19 @@ const ProfilePage = props => {
 
     let myCareerServices = () => {
         //debugger 
-       
-        return myCareerArray.map((careerObject) => {
-            
-            return <li>
+        if (myCareerArray.length < 1) 
+            return <center><h3 className="text-muted"> No services have been added yet :(</h3></center>
+        else 
+
+        return myCareerArray.map((careerObject, idx) => { 
+
+            return <>
                 <Row>
                     <Col className="ml-auto mr-auto" lg="2" md="4" xs="4">
                         <img
                             alt="..."
                             className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/clem-onojeghuo-2.jpg")}
+                            src={require("assets/img/faces/company" + 3 % (idx + 1) + ".jpg")}
                         />
                     </Col>
                     <Col className="ml-auto mr-auto" lg="7" md="4" xs="4">
@@ -92,12 +95,9 @@ const ProfilePage = props => {
                         </FormGroup>
                     </Col>
                 </Row>
-                <hr /> 
-            </li>
-                 
+                <br /> 
+            </>                 
         })
-
-
     }
 
 
@@ -118,7 +118,7 @@ const ProfilePage = props => {
                         </div>
                         <div className="name">
                             <h4 className="title">
-                                My Career Services <br />
+                                {localStorage.name.charAt(0).toUpperCase() + localStorage.name.slice(1)}'s Career Services <br />
                             </h4>
                             <h6 className="description"></h6>
                         </div>
@@ -126,7 +126,7 @@ const ProfilePage = props => {
                     <Row>
                         <Col className="ml-auto mr-auto text-center" md="6">
                             <p>
-                                Welcome to your Career Service Page!
+                                Your friends and finances await!
               </p>
                             <br />
                             
@@ -162,14 +162,7 @@ const ProfilePage = props => {
                     {/* Tab panes */}
                     <TabContent className="following" activeTab={activeTab}>
                         <TabPane tabId="1" id="follows">
-                            
-                            <Row>
-                                <Col className="ml-auto mr-auto" md="6">
-                                    <ul className="list-unstyled follows">  
-                                        <center><h3 className="text-muted"> No services have been added yet :(</h3></center>
-                                    </ul>
-                                </Col>
-                            </Row>
+                           {myCareerServices()}
                         </TabPane>
                         <TabPane className="text-center" tabId="2" id="following">
                             
@@ -188,17 +181,12 @@ const ProfilePage = props => {
                                         <small>Address: 1617 John F Kennedy Blvd 13th floor, Philadelphia, PA 19103, United States</small>
                                     </h6>
                                 </Col>
-                                <Col className="ml-auto mr-auto" lg="3" md="4" xs="4">
-                                    <FormGroup check>
-                                        <Label check>
-                                            <Input
-                                                defaultChecked
-                                                defaultValue=""
-                                                type="checkbox"
-                                            />
-                                            <span className="form-check-sign" />
-                                        </Label>
-                                    </FormGroup>
+                                <Col >
+                                    <Button
+                                        onClick={() => { this.handleRemove() }}
+                                    >
+                                    Remove
+                                    </Button>
                                 </Col>
                             </Row>
                             
