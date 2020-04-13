@@ -22,10 +22,20 @@ export default class App extends Component {
 
     } 
 
+    handleRemove = (idx) => {
+        debugger 
+        let NewCareerArray = this.state.myCareerServices
+        NewCareerArray.splice(idx, 1)
+            debugger 
+        this.setState({
+            myCareerServices: NewCareerArray
+        })
+    }
+
     render() {
         return (
             <div>
-                <MainContainer addServiceToPage={this.addServiceToPage} myCareerServices={this.state.myCareerServices}/>    
+                <MainContainer addServiceToPage={this.addServiceToPage} myCareerServices={this.state.myCareerServices} handleRemove={this.handleRemove}/>    
             </div>
         )
     }

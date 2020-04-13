@@ -116,7 +116,7 @@ export default class MainContainer extends Component {
                     />
                     <Route
                         path="/events-page"
-                        render={props => <EventPage {...props} loggedIn={this.state.loggedIn} myCareerServices={this.props.myCareerServices} />}
+                        render={props => <EventPage {...props} loggedIn={this.state.loggedIn} myCareerServices={this.props.myCareerServices} handleRemove={this.props.handleRemove} />}
                     />
                     <Route
                         path="/sign-in"

@@ -59,6 +59,10 @@ const ProfilePage = props => {
         };
     });
 
+    let handleRemove = (idx) => {
+        props.handleRemove(idx)
+    }
+
     let myCareerServices = () => {
         //debugger 
         if (myCareerArray.length < 1) 
@@ -73,7 +77,7 @@ const ProfilePage = props => {
                         <img
                             alt="..."
                             className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/company" + 3 % (idx + 1) + ".jpg")}
+                            src={require("assets/img/faces/company" + (idx + 1) % 3  + ".jpg")}
                         />
                     </Col>
                     <Col className="ml-auto mr-auto" lg="7" md="4" xs="4">
@@ -83,23 +87,17 @@ const ProfilePage = props => {
                         </h6>
                     </Col>
                     <Col className="ml-auto mr-auto" lg="3" md="4" xs="4">
-                        <FormGroup check>
-                            <Label check>
-                                <Input
-                                    defaultChecked
-                                    defaultValue=""
-                                    type="checkbox"
-                                />
-                                <span className="form-check-sign" />
-                            </Label>
-                        </FormGroup>
+                        <Button
+                            onClick={() => { handleRemove(idx) }}
+                        >
+                            Remove
+                        </Button>
                     </Col>
                 </Row>
                 <br /> 
             </>                 
         })
     }
-
 
     return (
         
@@ -144,7 +142,7 @@ const ProfilePage = props => {
                                         }}
                                     >
                                         Personal
-                  </NavLink>
+                            </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink
@@ -154,7 +152,7 @@ const ProfilePage = props => {
                                         }}
                                     >
                                         Friends
-                  </NavLink>
+                            </NavLink>
                                 </NavItem>
                             </Nav>
                         </div>
@@ -182,14 +180,18 @@ const ProfilePage = props => {
                                     </h6>
                                 </Col>
                                 <Col >
-                                    <Button
-                                        onClick={() => { this.handleRemove() }}
-                                    >
-                                    Remove
-                                    </Button>
+                                    <FormGroup check>
+                                        <Label check>
+                                            <Input
+                                                defaultChecked
+                                                defaultValue=""
+                                                type="checkbox"
+                                            />
+                                            <span className="form-check-sign" />
+                                        </Label>
+                                    </FormGroup>
                                 </Col>
                             </Row>
-                            
                         </TabPane>
                     </TabContent>
                 </Container>
