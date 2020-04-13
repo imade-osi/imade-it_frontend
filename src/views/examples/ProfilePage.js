@@ -71,7 +71,7 @@ function ProfilePage() {
             </div>
             <div className="name">
               <h4 className="title">
-                Welcome {localStorage.name} <br />
+                Welcome {localStorage.name.charAt(0).toUpperCase() + localStorage.name.slice(1)} <br />
               </h4>
               <h6 className="description"></h6>
             </div>
