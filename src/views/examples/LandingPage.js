@@ -109,9 +109,9 @@ export default class LandingPage extends Component {
     // }
     // else window.alert('Sorry, the city you entered could not be found. Please try again. ')
 
-
+    
     let address = `${city},+${state}`
-
+    
 
     //debugger 
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_MAP_API_KEY}`, {

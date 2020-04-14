@@ -179,7 +179,7 @@ export class MapContainer extends Component {
         //debugger 
         let city = event.target.city.value
         let state = event.target.state.value
-    
+             
         this.props.getCareerCoordinates(city, state)
     }
 
