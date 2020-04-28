@@ -119,21 +119,7 @@ export class MapContainer extends Component {
     displayMarkers = () => {
         //debugger 
         return this.props.markersArray.map((markerProps, index) => {
-            //debugger 
-            //console.log(markerProps)
-            // if(index === 1)
-            // {
-            //     return  <Marker key={index} id={index} position={{
-            //                         lat: markerProps[2],
-            //                         lng: markerProps[3]    
-            //                     }}
-            //                     icon={{
-            //                         url: "http://maps.google.com/mapfiles/ms/micons/green-dot.png" 
-            //                     }}
-            //                 onClick={() => { this.setCareerCard(markerProps)}}
-            //             />
-            // }
-            // else 
+           
                 return <Marker key={index} id={index} position={{
                     lat: markerProps[2],
                     lng: markerProps[3]
