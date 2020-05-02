@@ -1,6 +1,6 @@
 
 import React from 'react' 
-import {Modal, Card, Image, Header} from 'semantic-ui-react'
+import {Card, Image} from 'semantic-ui-react'
 import swal from 'sweetalert'
 
 export default class CareerItem extends React.Component {
@@ -34,7 +34,7 @@ export default class CareerItem extends React.Component {
 
 
     render() {
-        const { open, dimmer } = this.state;
+        
         let addedToLog = this.state.addedToLog;
 
         return (
