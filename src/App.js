@@ -6,12 +6,8 @@ export default class App extends Component {
   state= {
       myCareerServices: []
   }
-   
     addServiceToPage = (serviceName, serviceAddress) => {
-
-  
         this.setState({
-
             myCareerServices: [...this.state.myCareerServices,
             {
                 name: serviceName,
@@ -19,7 +15,6 @@ export default class App extends Component {
             }
             ]
         })
-
     } 
 
     handleRemove = (idx) => {

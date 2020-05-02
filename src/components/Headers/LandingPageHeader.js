@@ -27,10 +27,10 @@ import React, { Component } from 'react'
 
 export default class LandingPageHeader extends Component {
 
-  componentDidMount = () => {
-    window.addEventListener('resize', 
-      console.log("i was clicked"));
-  }
+  // componentDidMount = () => {
+  //   window.addEventListener('resize', 
+  //     console.log("i was clicked"));
+  // }
 
   render() {
     let pageHeader = React.createRef()

@@ -62,7 +62,7 @@ function ExamplesNavbar(props) {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
-  console.log(props)
+  //console.log(props)
   return (
     <Navbar
       className={classnames("fixed-top", navbarColor)}

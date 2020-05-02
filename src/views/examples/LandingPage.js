@@ -152,7 +152,7 @@ export default class LandingPage extends Component {
   }
 
   render() {
-    console.log("my careers", this.props.myCareerServices)
+    //console.log("my careers", this.props.myCareerServices)
     return (
       <div>
           {this.state.mapView ? 

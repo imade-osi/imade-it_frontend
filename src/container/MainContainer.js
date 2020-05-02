@@ -95,7 +95,7 @@ export default class MainContainer extends Component {
 
 
     render() {
-        console.log(this.state)
+        //console.log(this.state)
         return (
            
             <BrowserRouter>
