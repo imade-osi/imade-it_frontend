@@ -19,7 +19,6 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import App from './App';
 //import 'semantic-ui-css/semantic.min.css';
 
@@ -30,12 +29,6 @@ import "assets/scss/paper-kit.scss";
 import "assets/demo/demo.css";
 //import 'semantic-ui-css/semantic.min.css';
 
-// pages
-import WelcomeScreen from "views/WelcomeScreen.js";
-import LandingPage from "views/examples/LandingPage.js";
-import ProfilePage from "views/examples/ProfilePage.js";
-import EventPage from "views/examples/ProfilePage.js";
-import RegisterPage from "views/examples/RegisterPage.js";
 // others
 
 ReactDOM.render(<App/>, document.getElementById("root")

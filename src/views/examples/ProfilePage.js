@@ -37,7 +37,6 @@ import {
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 
 function ProfilePage() {
   const [activeTab, setActiveTab] = React.useState("1");
@@ -75,7 +74,7 @@ function ProfilePage() {
               <h4 className="title">
                {localStorage.name.charAt(0).toUpperCase() + localStorage.name.slice(1)}'s Profile Page <br />
               </h4>
-              <h6 className="description"></h6>
+  
             </div>
           </div>
           <Row>

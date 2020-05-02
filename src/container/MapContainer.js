@@ -1,11 +1,8 @@
-import { Map, InfoWindow, Marker, GoogleApiWrapper, Listing } from 'google-maps-react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React, {Component} from 'react';
-import Geocode from 'react-geocode';
 import "../assets/css/MapContainer.css";
 import "../assets/css/style.css";
 import CareerItem from "./CareerItem.js";
-import { useGoogleMap } from '@react-google-maps/api';
-import {NavLink} from "reactstrap";
 
 
 export class MapContainer extends Component {

@@ -37,7 +37,6 @@ import {
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import EventPageHeader from "components/Headers/EventPageHeader.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 
 const ProfilePage = props => {
     //debugger 
@@ -118,7 +117,7 @@ const ProfilePage = props => {
                             <h4 className="title">
                                 {localStorage.name.charAt(0).toUpperCase() + localStorage.name.slice(1)}'s Career Services <br />
                             </h4>
-                            <h6 className="description"></h6>
+                            
                         </div>
                     </div>
                     <Row>
