@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
 // styles
@@ -12,7 +11,6 @@ import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import EventPage from "views/examples/EventPage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
-import MapContainer from "./MapContainer.js";
 // others
 
 export default class MainContainer extends Component {
