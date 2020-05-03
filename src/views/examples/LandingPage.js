@@ -20,7 +20,7 @@ export default class LandingPage extends Component {
 
   handleSearchError = () => {
     swal({
-      title: "Sorry, location can't be found. Please check your city and/or state and try again!",
+      title: "Sorry, this location can't be found. Please check your city and/or state and try again!",
       icon: "error",
       button: "Back to Map",
     });
