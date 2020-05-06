@@ -136,7 +136,7 @@ export default class LandingPage extends Component {
           .then((response) => {
            
 
-            //debugger 
+           
               if (response.results.length > 0 )
               {
                 response.results.forEach((element, idx) => {
@@ -153,6 +153,7 @@ export default class LandingPage extends Component {
 
   render() {
     //console.log("all my careers", this.props.myCareerServices)
+    //debugger
     return (
       <div>
           {this.state.mapView ? 
