@@ -129,12 +129,12 @@ export default class LandingPage extends Component {
          
         latCenter = response.results[0].geometry.location.lat
         longCenter = response.results[0].geometry.location.lng
-         //debugger
+        
  
         fetch(`${proxyurl}https://maps.googleapis.com/maps/api/place/textsearch/json?query=job+fairs+near+${address}&key=${process.env.REACT_APP_MAP_API_KEY}`)
           .then(r => r.json())
           .then((response) => {
-            //debugger 
+           
 
             //debugger 
               if (response.results.length > 0 )
@@ -152,7 +152,7 @@ export default class LandingPage extends Component {
   }
 
   render() {
-    //console.log("my careers", this.props.myCareerServices)
+    //console.log("all my careers", this.props.myCareerServices)
     return (
       <div>
           {this.state.mapView ? 
