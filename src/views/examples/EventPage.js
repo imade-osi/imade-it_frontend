@@ -64,6 +64,7 @@ const ProfilePage = props => {
 
     let myCareerServices = () => {
         //debugger 
+        //debugger 
         if (myCareerArray.length < 1) 
             return <center><h3 className="text-muted"> No services have been added yet :(</h3></center>
         else 
