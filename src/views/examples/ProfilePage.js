@@ -34,7 +34,7 @@ import {
   Col
 } from "reactstrap";
 
-// core components
+// The core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 
