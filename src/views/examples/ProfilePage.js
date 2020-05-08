@@ -18,7 +18,7 @@
 */
 import React from "react";
 
-// reactstrap components
+// The reactstrap components
 import {
   Button,
   Label,
