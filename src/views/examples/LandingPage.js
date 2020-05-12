@@ -152,8 +152,8 @@ export default class LandingPage extends Component {
   }
 
   render() {
-    //console.log("all my careers", this.props.myCareerServices)
-    //debugger
+    console.log("all my careers", this.props.myCareerServices)
+    debugger
     return (
       <div>
           {this.state.mapView ? 
