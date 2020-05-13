@@ -146,6 +146,7 @@ export default class LandingPage extends Component {
                 }) 
               }
               //debugger 
+              //debugger
             this.setCenter(latCenter, longCenter, markersArray)
           })
       })
