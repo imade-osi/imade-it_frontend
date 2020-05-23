@@ -97,7 +97,7 @@ export default class LandingPage extends Component {
     // }
     // else window.alert('Sorry, the city you entered could not be found. Please try again. ')
 
-    //debugger
+   
 
     // if (stateArray.length === 3) {
     //   state = `${stateArray[0]}+${stateArray[1]}+${stateArray[2]}`
