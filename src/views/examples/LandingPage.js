@@ -86,16 +86,16 @@ export default class LandingPage extends Component {
     let stateArray = state.split(' ')
     address = '1600+Amphitheatre+Parkway,+Mountain+View,+California';
     address2 = 'Paul Alto,+Mountain+View,+California';
-    if (cityArray.length === 3) {
-      city = `${cityArray[0]}+${cityArray[1]}+${cityArray[2]}`
-    }
-    else if (cityArray.length === 2) {
-      city = `${cityArray[0]}+${cityArray[1]}`
-    }
-    else if (cityArray.length === 1) {
-      city = `${cityArray[0]}`
-    }
-    else window.alert('Sorry, the city you entered could not be found. Please try again. ')
+    // if (cityArray.length === 3) {
+    //   city = `${cityArray[0]}+${cityArray[1]}+${cityArray[2]}`
+    // }
+    // else if (cityArray.length === 2) {
+    //   city = `${cityArray[0]}+${cityArray[1]}`
+    // }
+    // else if (cityArray.length === 1) {
+    //   city = `${cityArray[0]}`
+    // }
+    // else window.alert('Sorry, the city you entered could not be found. Please try again. ')
 
    
 
