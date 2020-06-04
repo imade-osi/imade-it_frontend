@@ -84,9 +84,9 @@ export default class LandingPage extends Component {
 
     let cityArray = city.split(' ')
     let stateArray = state.split(' ')
-    address = '1600+Amphitheatre+Parkway,+Mountain+View,+California';
-    address2 = 'Paul Alto,+Mountain+View,+California';
-    // if (cityArray.length === 3) {
+    // address = '1600+Amphitheatre+Parkway,+Mountain+View,+California';
+    // address2 = 'Paul Alto,+Mountain+View,+California';
+    // // if (cityArray.length === 3) {
     //   city = `${cityArray[0]}+${cityArray[1]}+${cityArray[2]}`
     // }
     // else if (cityArray.length === 2) {
