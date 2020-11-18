@@ -171,7 +171,7 @@ export class MapContainer extends Component {
             <div> 
                 <section >
 
-                    {/* <--Section Heading--> */}
+                    {/* <-- Section Heading --> */}
 
                     <div className="card">
                         <div className="card-body" style={{"padding": "40px"}}>
@@ -216,7 +216,7 @@ export class MapContainer extends Component {
 
                                             {/* <--Grid column--> */}
                                             <div className="col-md-6 mb-4">
-                                    <CareerItem careerDetails={this.state.careerDetails} addServiceToPage={this.props.addServiceToPage}/>
+                                                <CareerItem careerDetails={this.state.careerDetails} addServiceToPage={this.props.addServiceToPage}/>
                                             </div>
                                             {/* <--Grid column--> */}
                                 

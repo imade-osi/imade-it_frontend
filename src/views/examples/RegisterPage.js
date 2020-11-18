@@ -90,7 +90,7 @@ state={
       name: this.state.username,
       password: this.state.password 
     }
-
+    
     fetch('http://localhost:4000/login', {
       method: "POST",
       headers: {
@@ -108,7 +108,7 @@ state={
           localStorage.setItem('user_id', response.id);
           localStorage.setItem('name', response.name);
           //debugger 
-          
+        
           this.props.postAuthUser(response.id, response.token, response.name)
           
         } else {
