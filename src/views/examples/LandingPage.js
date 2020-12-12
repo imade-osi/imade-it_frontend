@@ -64,7 +64,7 @@ export default class LandingPage extends Component {
         //debugger 
     if (!city)
     {
-    city = 'philadelphia'
+    city = 'los angeles'
     state = 'pennsylvania'
     }
     // city = 'chicago'
