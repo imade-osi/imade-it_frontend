@@ -73,7 +73,7 @@ export default class LandingPage extends Component {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     let latCenter = 0;
     let longCenter = 0;
-    let markersArray = []
+    let markersArray = {}
     let address = `${city},+${state}`
     
 
@@ -102,7 +102,6 @@ export default class LandingPage extends Component {
                   }) 
                 }
                 //debugger 
-                
               this.setCenter(latCenter, longCenter, markersArray)
           })
       })
