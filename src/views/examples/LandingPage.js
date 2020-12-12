@@ -18,6 +18,7 @@ export default class LandingPage extends Component {
       defaultMarker:  "http://maps.google.com/mapfiles/ms/micons/red-dot.png" 
   }
 
+
   handleSearchError = () => {
     swal({
       title: "Sorry, this location can't be found. Please check your city and/or state and try again!",
@@ -33,18 +34,14 @@ export default class LandingPage extends Component {
   }
 
   handleMainBtn = () => {
-    
       this.setState({
         ...this.state, 
         mapView: false
-      })
-      
+      })  
   }
 
-  setCenter = (newlat, newlong, markersArray) => {
-    
+  setCenter = (newlat, newlong, markersArray) => { 
     //debugger 
-
     markersArray.length === 0  ? 
 
         this.setState({
@@ -52,18 +49,14 @@ export default class LandingPage extends Component {
           lngCenter: newlong,
           mapView: true
         })
-
     :
-
-    this.setState({
-      latCenter: newlat,
-      lngCenter: newlong,
-      markersArray: markersArray,
-      mapView: true 
-    })
-
+        this.setState({
+          latCenter: newlat,
+          lngCenter: newlong,
+          markersArray: markersArray,
+          mapView: true 
+        })
     //debugger 
-
   }
 
 
@@ -81,36 +74,6 @@ export default class LandingPage extends Component {
     let latCenter = 0;
     let longCenter = 0;
     let markersArray = []
-
-    let cityArray = city.split(' ')
-    let stateArray = state.split(' ')
-    // address = '1600+Amphitheatre+Parkway,+Mountain+View,+California';
-    // address2 = 'Paul Alto,+Mountain+View,+California';
-    // // if (cityArray.length === 3) {
-    //   city = `${cityArray[0]}+${cityArray[1]}+${cityArray[2]}`
-    // }
-    // else if (cityArray.length === 2) {
-    //   city = `${cityArray[0]}+${cityArray[1]}`
-    // }
-    // else if (cityArray.length === 1) {
-    //   city = `${cityArray[0]}`
-    // }
-    // else window.alert('Sorry, the city you entered could not be found. Please try again. ')
-
-   
-
-    // if (stateArray.length === 3) {
-    //   state = `${stateArray[0]}+${stateArray[1]}+${stateArray[2]}`
-    // }
-    // else if (stateArray.length === 2) {
-    //   state = `${stateArray[0]}+${stateArray[1]}`
-    // }
-    // else if (stateArray.length === 1) {
-    //   state = `${stateArray[0]}`
-    // }
-    // else window.alert('Sorry, the city you entered could not be found. Please try again. ')
-
-    
     let address = `${city},+${state}`
     
 
@@ -119,39 +82,33 @@ export default class LandingPage extends Component {
     })
       .then(r => r.json())
       .then((response) => {
-        //debugger
-        
+        //debugger 
         if (response.results[0] === undefined ) {
           this.handleSearchError()
           return
         }
         else 
-
-         
-        latCenter = response.results[0].geometry.location.lat
-        longCenter = response.results[0].geometry.location.lng
-        
- 
-        fetch(`${proxyurl}https://maps.googleapis.com/maps/api/place/textsearch/json?query=job+fairs+near+${address}&key=${process.env.REACT_APP_MAP_API_KEY}`)
-          .then(r => r.json())
-          .then((response) => {
-           
-
-           
-              if (response.results.length > 0 )
-              {
-                response.results.forEach((element, idx) => {
-                  if (idx < 20) {
-                    markersArray.push([element.name, element.formatted_address, element.geometry.location.lat, element.geometry.location.lng])
-                  }
-                }) 
-              }
-              //debugger 
-              
-            this.setCenter(latCenter, longCenter, markersArray)
+          latCenter = response.results[0].geometry.location.lat
+          longCenter = response.results[0].geometry.location.lng
+          fetch(`${proxyurl}https://maps.googleapis.com/maps/api/place/textsearch/json?query=job+fairs+near+${address}&key=${process.env.REACT_APP_MAP_API_KEY}`)
+            .then(r => r.json())
+            .then((response) => {
+                if (response.results.length > 0 )
+                {
+                  response.results.forEach((element, idx) => {
+                    if (idx < 20) {
+                      markersArray.push([element.name, element.formatted_address, element.geometry.location.lat, element.geometry.location.lng])
+                    }
+                  }) 
+                }
+                //debugger 
+                
+              this.setCenter(latCenter, longCenter, markersArray)
           })
       })
   }
+
+
 
   render() {
     console.log("all my careers", this.props.myCareerServices)
@@ -174,5 +131,31 @@ export default class LandingPage extends Component {
     )
   }
 }
+
+  // address = '1600+Amphitheatre+Parkway,+Mountain+View,+California';
+    // address2 = 'Paul Alto,+Mountain+View,+California';
+    // // if (cityArray.length === 3) {
+    //   city = `${cityArray[0]}+${cityArray[1]}+${cityArray[2]}`
+    // }
+    // else if (cityArray.length === 2) {
+    //   city = `${cityArray[0]}+${cityArray[1]}`
+    // }
+    // else if (cityArray.length === 1) {
+    //   city = `${cityArray[0]}`
+    // }
+    // else window.alert('Sorry, the city you entered could not be found. Please try again. ')
+
+
+
+    // if (stateArray.length === 3) {
+    //   state = `${stateArray[0]}+${stateArray[1]}+${stateArray[2]}`
+    // }
+    // else if (stateArray.length === 2) {
+    //   state = `${stateArray[0]}+${stateArray[1]}`
+    // }
+    // else if (stateArray.length === 1) {
+    //   state = `${stateArray[0]}`
+    // }
+    // else window.alert('Sorry, the city you entered could not be found. Please try again. ')
 
 

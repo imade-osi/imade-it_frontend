@@ -84,8 +84,7 @@ export class MapContainer extends Component {
                     lat: "Not Available",
                     long: "Not Available"
                 }
-            })
-                
+            })       
         }
 
         //debugger 
