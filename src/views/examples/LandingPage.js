@@ -67,8 +67,8 @@ export default class LandingPage extends Component {
     city = 'los angeles'
     state = 'california'
     }
-    // city = 'chicago'
-    // state = 'illinois'
+    // city = 'philadelphia'
+    // state = 'pennsylvania'
 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     let latCenter = 0;
@@ -101,7 +101,7 @@ export default class LandingPage extends Component {
                     }
                   }) 
                 }
-                //debugger 
+                
               this.setCenter(latCenter, longCenter, markersArray)
           })
       })
