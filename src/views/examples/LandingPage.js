@@ -67,7 +67,7 @@ export default class LandingPage extends Component {
     city = 'los angeles'
     state = 'california'
     }
-    // city = 'philadelphia'
+    // city = 'philadelphia '
     // state = 'pennsylvania'
 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
