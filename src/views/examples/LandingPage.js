@@ -82,7 +82,7 @@ export default class LandingPage extends Component {
     })
       .then(r => r.json())
       .then((response) => {
-        //debugger 
+        
         if (response.results[0] === undefined ) {
           this.handleSearchError()
           return
