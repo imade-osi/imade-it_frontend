@@ -113,7 +113,7 @@ state={
           
         } else {
             swal({
-              title: "Please check your password/username and try again",
+              title: "Please check your password or username and try again",
               icon: "error",
               button: "Close"
             })
