@@ -107,7 +107,7 @@ state={
           localStorage.setItem('token', response.token);
           localStorage.setItem('user_id', response.id);
           localStorage.setItem('name', response.name);
-          //debugger 
+          
         
           this.props.postAuthUser(response.id, response.token, response.name)
           
