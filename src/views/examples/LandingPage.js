@@ -41,7 +41,7 @@ export default class LandingPage extends Component {
   }
 
   setCenter = (newlat, newlong, markersArray) => { 
-    //debugger 
+    
     markersArray.length === 0  ? 
 
         this.setState({
@@ -70,7 +70,7 @@ export default class LandingPage extends Component {
     // city = 'philadelphia'
     // state = 'pennsylvania'
 
-    // city = 'yorkk'
+    // city = 'york'
     // state = 'pennsylvania'
 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
