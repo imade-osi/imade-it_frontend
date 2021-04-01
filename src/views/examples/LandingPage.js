@@ -80,7 +80,7 @@ export default class LandingPage extends Component {
     let address = `${city},+${state}`
     
 
-    //debugger 
+    
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_MAP_API_KEY}`, {
     })
       .then(r => r.json())
